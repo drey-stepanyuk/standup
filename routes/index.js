@@ -1,9 +1,25 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const standupCtrl = require('../controllers/standup.server.controller');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', (req, res, next) => {
+  return standupCtrl.list(req, res);
+});
+
+/* POST filter be mamber name - home page */
+router.post('/', (req, res) => {
+    return standupCtrl.filterByMember(req, res);
+});
+
+/* GET new note page. */
+router.get('/newnote', (req, res) => {
+   return standupCtrl.getNote(req, res); 
+});
+
+/* POST new note page. */
+router.post('/newnote', (req, res) => {
+   return standupCtrl.create(req, res); 
 });
 
 module.exports = router;
