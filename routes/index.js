@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
   return standupCtrl.list(req, res);
 });
 
-/* POST filter be mamber name - home page */
+/* POST filter by member name - home page */
 router.post('/', (req, res) => {
     return standupCtrl.filterByMember(req, res);
 });

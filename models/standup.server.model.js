@@ -5,7 +5,7 @@ let memberNameValidator = [
     (val) => {
         return (val.length > 0 && val.toLocaleLowerCase() != 'none')
     },
-    // Custome error text
+    // Custom error text
     'Select a valid member name!'
 ];
 
